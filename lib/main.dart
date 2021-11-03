@@ -33,12 +33,12 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final _dataService = DataService();
 
-  String _response;
+  String _response = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(body: Center(
       child: Builder(builder: (_) {
-        if (_response != null) {
+        if (_response != '') {
           return Text(_response);
         } else {
           return ElevatedButton(
@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _makeRequest() async {
-    final response = await _dataService.makeRequestTOApi();
+    final response = await _dataService.makeRequestToApi();
     setState(() => _response = response);
   }
 }

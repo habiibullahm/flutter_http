@@ -1,9 +1,9 @@
 import 'package:http/http.dart' as http;
 
+// https://jsonplaceholder.typicode.com/users/1
 class DataService {
-  Future<String> makeRequestTOApi() async {
-    // https://pokeapi.co/api/v2/pokemon/1
-    final uri = Uri.https('pokeapi.co/api/v2', '/pokemon/1');
+  Future<String> makeRequestToApi() async {
+    final uri = Uri.https('jsonplaceholder.typicode.com', '/users/1');
     final response = await http.get(uri);
     return response.body;
   }
